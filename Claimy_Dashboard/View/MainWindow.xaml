@@ -43,7 +43,7 @@
                     <!--<Image Source="Resource/Claimy_Logo_OG.png" Margin="0,0,0,-9"/>-->
                     <Button VerticalAlignment="Top" HorizontalAlignment="Right" Width="200" Height="68" Background="{x:Null}" BorderBrush="{x:Null}">
                         <StackPanel>
-                            <Image Source="Resource/Claimy_Logo_OG.png" Stretch="Fill" Height="61" Width="182"/>
+                            <Image Source="/Resource/Claimy_Logo_OG.png" Stretch="Fill" Height="61" Width="182"/>
                         </StackPanel>
                     </Button>
 
