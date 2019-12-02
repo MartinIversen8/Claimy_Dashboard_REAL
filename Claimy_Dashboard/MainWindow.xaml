@@ -11,10 +11,10 @@
     </Window.Effect>
     <Grid Background="LightGray">
         <Grid Height="70" VerticalAlignment="Top" Background="#FF537DA6">
-            <Grid Margin="263,0,811,0">
+            <Grid>
 
-                <TextBox x:Name="searchBar" materialDesign:HintAssist.Hint="SEARCH" Foreground="Black" Background="White"  Margin="10,32,72,10" RenderTransformOrigin="0.463,-0.004"/>
-                <Button Background="LightGray" HorizontalAlignment="Left" BorderBrush="LightGray" Margin="446,32,0,11" Height="Auto"  materialDesign:ButtonAssist.CornerRadius="0" Width="56" >
+                <TextBox x:Name="searchBar" materialDesign:HintAssist.Hint="SEARCH" Foreground="Black" Background="White" Width="300" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="214,26,0,17" Height="27"/>
+                <Button Background="LightGray" BorderBrush="LightGray"  Height="26"  materialDesign:ButtonAssist.CornerRadius="0" Width="56" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="515,26,0,18" >
                     <materialDesign:PackIcon Kind="Search" Height="21" Width="24" Foreground="Black"/>
                 </Button>
 
@@ -74,7 +74,7 @@
                         <GridViewColumn Header="Status" Width="200"></GridViewColumn>
                     </GridView>
                 </ListView.View>
-                
+
             </ListView>
         </Grid>
     </Grid>
