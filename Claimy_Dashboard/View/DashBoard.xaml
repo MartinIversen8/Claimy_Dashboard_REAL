@@ -1,11 +1,11 @@
-﻿<Window x:Class="Claimy_Dashboard.MainWindow"
+﻿<Window x:Class="Claimy_Dashboard.DashBoard"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Claimy_Dashboard"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
-        mc:Ignorable="d" Height="900" Width="1600" WindowStartupLocation="CenterScreen" Foreground="White" Title="Claimy Dashboard">
+        mc:Ignorable="d" Height="900" Width="1344" WindowStartupLocation="CenterScreen" Foreground="White" Title="Claimy Dashboard" ResizeMode="NoResize">
     <Window.Effect>
         <DropShadowEffect Color="#FF537DA6"/>
     </Window.Effect>
@@ -26,7 +26,7 @@
                     <StackPanel Width="150">
                         <Button Content="Settings"/>
                         <Button Content="Account"/>
-                        <Button Content="Help"/>
+                        <Button Content="Help" Click="CalledHelp" />
                         <Separator/>
                         <Button Content="Logout" Click="CloseDashBoard"/>
 
@@ -64,18 +64,23 @@
                 </ListView>
             </StackPanel>
         </Grid>
-        <Grid VerticalAlignment="Center" Height="793" Margin="208,75,4,1">
-            <ListView x:Name="caseListView">
-                <ListView.View>
-                    <GridView>
-                        <GridViewColumn Header="Case" Width="200"></GridViewColumn>
-                        <GridViewColumn Header="P-fine Reason" Width="200"></GridViewColumn>
-                        <GridViewColumn Header="Precedens" Width="200"></GridViewColumn>
-                        <GridViewColumn Header="Status" Width="200"></GridViewColumn>
-                    </GridView>
-                </ListView.View>
+        <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="200,70,462,6" Height="793" Width="930">
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Top" Width="930" Margin="0,1,0,0" Height="791">
+                <ListView x:Name="caseListView" VerticalAlignment="Top" HorizontalAlignment="Left" Height="162" Margin="0,1,0,0" Width="930">
+                    <ListView.View>
+                        <GridView>
+                            <GridViewColumn Header="Case" Width="200"/>
+                            <GridViewColumn Header="P-fine Reason" Width="200"/>
+                            <GridViewColumn Header="Precedens" Width="200"/>
+                            <GridViewColumn Header="Status" Width="200"/>
+                        </GridView>
+                    </ListView.View>
 
-            </ListView>
+                </ListView>
+            </StackPanel>
         </Grid>
+
+
+
     </Grid>
 </Window>

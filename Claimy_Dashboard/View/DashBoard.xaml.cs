@@ -16,11 +16,11 @@ using System.Windows.Shapes;
 namespace Claimy_Dashboard
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for Dashboard.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class DashBoard : Window
     {
-        public MainWindow()
+        public DashBoard()
         {
             InitializeComponent();
             caseListView.Visibility = Visibility.Hidden;
@@ -39,5 +39,11 @@ namespace Claimy_Dashboard
         {
             caseListView.Visibility = Visibility.Hidden;
         }
+
+        private void CalledHelp(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("Why are you gay?");
+        }
+
     }
 }

@@ -23,5 +23,13 @@ namespace Claimy_Dashboard.View
         {
             InitializeComponent();
         }
+
+        private void TryLogin(object sender, RoutedEventArgs e)
+        {            
+            DashBoard main = new DashBoard();            
+            App.Current.MainWindow = main;
+            this.Close();
+            main.Show();           
+        }
     }
 }

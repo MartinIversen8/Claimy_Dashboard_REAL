@@ -13,6 +13,6 @@
             <TextBox x:Name="user" HorizontalAlignment="Center" VerticalAlignment="Top" Width="230" Height="30" Background="White" materialDesign:HintAssist.Hint="Username"/>
             <TextBox x:Name="password" HorizontalAlignment="Center" VerticalAlignment="Center" Width="230" Height="30" Background="White" materialDesign:HintAssist.Hint="Password" />
         </Grid>
-        <Button x:Name="loginButton" Content="Login" Width="100" Height="30" Background="#FF537DA6" HorizontalAlignment="Center"/>
+        <Button x:Name="loginButton" Content="Login" Width="100" Height="30" Background="#FF537DA6" HorizontalAlignment="Center" Click="TryLogin"/>
     </Grid>
 </Window>
