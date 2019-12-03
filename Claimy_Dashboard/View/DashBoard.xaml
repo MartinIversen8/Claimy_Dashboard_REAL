@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Claimy_Dashboard"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
-        mc:Ignorable="d" Height="900" Width="1344" WindowStartupLocation="CenterScreen" Foreground="White" Title="Claimy Dashboard" ResizeMode="NoResize">
+        mc:Ignorable="d" Height="900" Width="1600" WindowStartupLocation="CenterScreen" Foreground="White" Title="Claimy Dashboard" ResizeMode="CanMinimize" >
     <Window.Effect>
         <DropShadowEffect Color="#FF537DA6"/>
     </Window.Effect>
@@ -61,12 +61,18 @@
                             <TextBlock Text="Cases" VerticalAlignment="Center" Margin="20 10"/>
                         </StackPanel>
                     </ListViewItem>
+                    <ListViewItem Height="60" PreviewMouseLeftButtonDown="OpenAddCase">
+                        <StackPanel Orientation="Horizontal">
+                            <materialDesign:PackIcon Kind="Add" Width="25" Height="25" VerticalAlignment="Center"/>
+                            <TextBlock Text="Add Case" VerticalAlignment="Center" Margin="20 10"/>
+                        </StackPanel>
+                    </ListViewItem>
                 </ListView>
             </StackPanel>
         </Grid>
-        <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="200,70,462,6" Height="793" Width="930">
-            <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Top" Width="930" Margin="0,1,0,0" Height="791">
-                <ListView x:Name="caseListView" VerticalAlignment="Top" HorizontalAlignment="Left" Height="162" Margin="0,1,0,0" Width="930">
+        <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="201,71,666,7" Height="793">
+            <StackPanel Orientation="Horizontal" VerticalAlignment="Top" Margin="0,1,0,0" Height="791">
+                <ListView x:Name="caseListView" VerticalAlignment="Top" HorizontalAlignment="Left" Height="162" Margin="0,1,0,0" Width="703">
                     <ListView.View>
                         <GridView>
                             <GridViewColumn Header="Case" Width="200"/>

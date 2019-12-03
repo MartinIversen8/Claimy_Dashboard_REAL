@@ -45,5 +45,9 @@ namespace Claimy_Dashboard
             MessageBox.Show("Why are you gay?");
         }
 
+        private void OpenAddCase(object sender, MouseButtonEventArgs e)
+        {
+              
+        }
     }
 }

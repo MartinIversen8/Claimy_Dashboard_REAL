@@ -1,0 +1,25 @@
+﻿<Window x:Class="Claimy_Dashboard.View.AddCase"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Claimy_Dashboard.View"
+         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        mc:Ignorable="d"
+        Title="AddCase" Height="550" Width="800" ResizeMode="NoResize">
+    <Grid Background="LightGray">
+        <Grid Height="70" VerticalAlignment="Top" Background="#FF537DA6">
+            <TextBlock Text="Add Case" Foreground="White" FontSize="50" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        </Grid>
+        <TextBox materialDesign:HintAssist.Hint=" Case No" Background="White" Width="150" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="160,110,282,329" Height="30"/>
+        <TextBox materialDesign:HintAssist.Hint=" P-fine Reason" Width="150" Background="White" HorizontalAlignment="Center" Margin="160,160,282,280" VerticalAlignment="Center" Height="30"/>
+        <TextBox materialDesign:HintAssist.Hint=" Precedens (optional)" Width="150" Background="White" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="160,207,282,234" Height="30"/>
+        <ComboBox Width="150" materialDesign:HintAssist.Hint=" Status" HorizontalAlignment="Center"  VerticalAlignment="Center" Margin="235,261,357,176" Background="White" Height="32" BorderThickness="0" materialDesign:ComboBoxAssist.ClassicMode="true" >
+            <ComboBoxItem Width="150" BorderThickness="0">On going</ComboBoxItem>
+            <ComboBoxItem Width="150" BorderThickness="0">Pending</ComboBoxItem>
+            <ComboBoxItem Width="150" BorderThickness="0">Done</ComboBoxItem>
+            <ComboBoxItem Width="150" BorderThickness="0">Not specified</ComboBoxItem>
+        </ComboBox>
+        <Button Height="30" Width="80" Background="#FF537DA6" Margin="259,329,451,110" Content="Submit"/>
+    </Grid>
+</Window>
