@@ -11,6 +11,8 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using Claimy_Dashboard.EF;
+
 
 namespace Claimy_Dashboard.View
 {
@@ -21,7 +23,21 @@ namespace Claimy_Dashboard.View
     {
         public AddCase()
         {
+            
             InitializeComponent();
+        }
+
+       
+
+        private void SubmitCase(object sender, RoutedEventArgs e)
+        {
+            
+
+            Precedens.Text = "";
+            CaseNo.Text = "";
+            StatusCombo.Text = "";
+            fine_reason.Text = "";
+
         }
     }
 }

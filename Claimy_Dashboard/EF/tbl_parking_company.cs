@@ -6,38 +6,34 @@ namespace Claimy_Dashboard.EF
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    public partial class tbl_parking_company
+    public partial class tbl_Parking_Company
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public tbl_parking_company()
+        public tbl_Parking_Company()
         {
             tbl_Ticket = new HashSet<tbl_Ticket>();
         }
 
         [Key]
-        [StringLength(20)]
+        [StringLength(10)]
         public string fld_CVRNR { get; set; }
 
-        [Required]
         [StringLength(50)]
-        public string fld_name { get; set; }
-
-        [Required]
-        [StringLength(50)]
-        public string fld_address { get; set; }
-
-        [Required]
-        [StringLength(50)]
-        public string fld_email { get; set; }
-
-        [Required]
-        [StringLength(30)]
-        public string fld_phone_nr { get; set; }
+        public string fld_Name { get; set; }
 
         [StringLength(50)]
-        public string fld_contact_person { get; set; }
+        public string fld_Adress { get; set; }
 
-        public int fld_country { get; set; }
+        [StringLength(50)]
+        public string fld_Email { get; set; }
+
+        [StringLength(15)]
+        public string fld_Phone_No { get; set; }
+
+        [StringLength(50)]
+        public string fld_Contact_Person { get; set; }
+
+        public int? fld_Country_Number { get; set; }
 
         public virtual tbl_Country_List tbl_Country_List { get; set; }
 

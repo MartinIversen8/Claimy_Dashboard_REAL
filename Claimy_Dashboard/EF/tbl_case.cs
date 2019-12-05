@@ -6,27 +6,25 @@ namespace Claimy_Dashboard.EF
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    public partial class tbl_case
+    public partial class tbl_Case
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
-        public int fld_case_no { get; set; }
-
-        [Required]
-        [StringLength(200)]
-        public string fld_p_fine_reason { get; set; }
+        public int fld_Case_NO { get; set; }
 
         [StringLength(50)]
-        public string fld_precedent { get; set; }
+        public string fld_ParkingFine_Reason { get; set; }
 
-        [Required]
         [StringLength(50)]
-        public string fld_status { get; set; }
+        public string fld_Precedens { get; set; }
 
-        public int fld_Emp_ID { get; set; }
+        [StringLength(25)]
+        public string fld_Status { get; set; }
 
-        public int fld_Customer_ID { get; set; }
+        public int? fld_EMP_ID { get; set; }
 
-        public virtual tbl_Claimy_Emp tbl_Claimy_Emp { get; set; }
+        public virtual tbl_Claimy_Employee tbl_Claimy_Employee { get; set; }
+
+        
     }
 }

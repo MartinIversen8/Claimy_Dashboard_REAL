@@ -11,34 +11,31 @@ namespace Claimy_Dashboard.EF
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public tbl_Country_List()
         {
-            tbl_Claimy_Emp = new HashSet<tbl_Claimy_Emp>();
+            tbl_Claimy_Employee = new HashSet<tbl_Claimy_Employee>();
             tbl_Customer = new HashSet<tbl_Customer>();
-            tbl_parking_company = new HashSet<tbl_parking_company>();
+            tbl_Parking_Company = new HashSet<tbl_Parking_Company>();
         }
 
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
-        public int fld_number { get; set; }
+        public int fld_Number { get; set; }
 
-        [Required]
-        [StringLength(25)]
-        public string fld_country { get; set; }
-
-        [Required]
-        [StringLength(10)]
-        public string fld_zipcode { get; set; }
-
-        [Required]
         [StringLength(50)]
-        public string fld_city { get; set; }
+        public string fld_Country { get; set; }
+
+        [StringLength(6)]
+        public string fld_ZipCode { get; set; }
+
+        [StringLength(50)]
+        public string fld_City { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<tbl_Claimy_Emp> tbl_Claimy_Emp { get; set; }
+        public virtual ICollection<tbl_Claimy_Employee> tbl_Claimy_Employee { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<tbl_Customer> tbl_Customer { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<tbl_parking_company> tbl_parking_company { get; set; }
+        public virtual ICollection<tbl_Parking_Company> tbl_Parking_Company { get; set; }
     }
 }

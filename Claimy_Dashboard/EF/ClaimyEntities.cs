@@ -8,135 +8,136 @@ namespace Claimy_Dashboard.EF
     public partial class ClaimyEntities : DbContext
     {
         public ClaimyEntities()
-            : base("name=ClaimyEntities")
+            : base("name=ClaimyEntities2")
         {
         }
 
-        public virtual DbSet<tbl_case> tbl_case { get; set; }
-        public virtual DbSet<tbl_Claimy_Emp> tbl_Claimy_Emp { get; set; }
+        public virtual DbSet<tbl_Case> tbl_Case { get; set; }
+        public virtual DbSet<tbl_Claimy_Employee> tbl_Claimy_Employee { get; set; }
         public virtual DbSet<tbl_Country_List> tbl_Country_List { get; set; }
         public virtual DbSet<tbl_Customer> tbl_Customer { get; set; }
-        public virtual DbSet<tbl_image> tbl_image { get; set; }
-        public virtual DbSet<tbl_parking_company> tbl_parking_company { get; set; }
+        public virtual DbSet<tbl_Image> tbl_Image { get; set; }
+        public virtual DbSet<tbl_Parking_Company> tbl_Parking_Company { get; set; }
         public virtual DbSet<tbl_Ticket> tbl_Ticket { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<tbl_case>()
-                .Property(e => e.fld_p_fine_reason)
+            modelBuilder.Entity<tbl_Case>()
+                .Property(e => e.fld_ParkingFine_Reason)
+                .IsFixedLength();
+
+            modelBuilder.Entity<tbl_Case>()
+                .Property(e => e.fld_Precedens)
                 .IsUnicode(false);
 
-            modelBuilder.Entity<tbl_case>()
-                .Property(e => e.fld_precedent)
+            modelBuilder.Entity<tbl_Case>()
+                .Property(e => e.fld_Status)
+                .IsFixedLength();
+
+            modelBuilder.Entity<tbl_Claimy_Employee>()
+                .Property(e => e.fld_Name)
+                .IsFixedLength();
+
+            modelBuilder.Entity<tbl_Claimy_Employee>()
+                .Property(e => e.fld_Adress)
+                .IsFixedLength();
+
+            modelBuilder.Entity<tbl_Claimy_Employee>()
+                .Property(e => e.fld_Email)
+                .IsFixedLength();
+
+            modelBuilder.Entity<tbl_Claimy_Employee>()
+                .Property(e => e.fld_Phone_No)
                 .IsUnicode(false);
 
-            modelBuilder.Entity<tbl_case>()
-                .Property(e => e.fld_status)
-                .IsUnicode(false);
+            modelBuilder.Entity<tbl_Claimy_Employee>()
+                .Property(e => e.fld_Password)
+                .IsFixedLength();
 
-            modelBuilder.Entity<tbl_Claimy_Emp>()
-                .Property(e => e.fld_name)
-                .IsUnicode(false);
-
-            modelBuilder.Entity<tbl_Claimy_Emp>()
-                .Property(e => e.fld_email)
-                .IsUnicode(false);
-
-            modelBuilder.Entity<tbl_Claimy_Emp>()
-                .Property(e => e.fld_address)
-                .IsUnicode(false);
-
-            modelBuilder.Entity<tbl_Claimy_Emp>()
-                .Property(e => e.fld_password)
-                .IsUnicode(false);
-
-            modelBuilder.Entity<tbl_Claimy_Emp>()
-                .HasMany(e => e.tbl_case)
-                .WithRequired(e => e.tbl_Claimy_Emp)
-                .HasForeignKey(e => e.fld_Emp_ID)
-                .WillCascadeOnDelete(false);
+            modelBuilder.Entity<tbl_Claimy_Employee>()
+                .HasMany(e => e.tbl_Case)
+                .WithOptional(e => e.tbl_Claimy_Employee)
+                .HasForeignKey(e => e.fld_EMP_ID);
 
             modelBuilder.Entity<tbl_Country_List>()
-                .Property(e => e.fld_country)
-                .IsUnicode(false);
-
-            modelBuilder.Entity<tbl_Country_List>()
-                .Property(e => e.fld_zipcode)
+                .Property(e => e.fld_Country)
                 .IsFixedLength();
 
             modelBuilder.Entity<tbl_Country_List>()
-                .Property(e => e.fld_city)
+                .Property(e => e.fld_ZipCode)
                 .IsUnicode(false);
 
             modelBuilder.Entity<tbl_Country_List>()
-                .HasMany(e => e.tbl_Claimy_Emp)
-                .WithRequired(e => e.tbl_Country_List)
-                .HasForeignKey(e => e.fld_country)
-                .WillCascadeOnDelete(false);
+                .Property(e => e.fld_City)
+                .IsFixedLength();
+
+            modelBuilder.Entity<tbl_Country_List>()
+                .HasMany(e => e.tbl_Claimy_Employee)
+                .WithOptional(e => e.tbl_Country_List)
+                .HasForeignKey(e => e.fld_Country_Number);
 
             modelBuilder.Entity<tbl_Country_List>()
                 .HasMany(e => e.tbl_Customer)
-                .WithRequired(e => e.tbl_Country_List)
-                .HasForeignKey(e => e.fld_Country)
-                .WillCascadeOnDelete(false);
+                .WithOptional(e => e.tbl_Country_List)
+                .HasForeignKey(e => e.fld_Country_Number);
 
             modelBuilder.Entity<tbl_Country_List>()
-                .HasMany(e => e.tbl_parking_company)
-                .WithRequired(e => e.tbl_Country_List)
-                .HasForeignKey(e => e.fld_country)
-                .WillCascadeOnDelete(false);
+                .HasMany(e => e.tbl_Parking_Company)
+                .WithOptional(e => e.tbl_Country_List)
+                .HasForeignKey(e => e.fld_Country_Number);
 
             modelBuilder.Entity<tbl_Customer>()
-                .Property(e => e.fld_name)
+                .Property(e => e.fld_Name)
+                .IsFixedLength();
+
+            modelBuilder.Entity<tbl_Customer>()
+                .Property(e => e.fld_Adress)
+                .IsFixedLength();
+
+            modelBuilder.Entity<tbl_Customer>()
+                .Property(e => e.fld_Email)
+                .IsFixedLength();
+
+            modelBuilder.Entity<tbl_Customer>()
+                .Property(e => e.fld_Phone_No)
                 .IsUnicode(false);
 
             modelBuilder.Entity<tbl_Customer>()
-                .Property(e => e.fld_email)
-                .IsUnicode(false);
+                .Property(e => e.fld_Password)
+                .IsFixedLength();
 
-            modelBuilder.Entity<tbl_Customer>()
-                .Property(e => e.fld_address)
-                .IsUnicode(false);
-
-            modelBuilder.Entity<tbl_Customer>()
-                .Property(e => e.fld_phone_no)
-                .IsUnicode(false);
-
-            modelBuilder.Entity<tbl_Customer>()
-                .Property(e => e.fld_password)
-                .IsUnicode(false);
-
-            modelBuilder.Entity<tbl_image>()
-                .Property(e => e.fld_description)
-                .IsUnicode(false);
-
-            modelBuilder.Entity<tbl_parking_company>()
+            modelBuilder.Entity<tbl_Parking_Company>()
                 .Property(e => e.fld_CVRNR)
                 .IsUnicode(false);
 
-            modelBuilder.Entity<tbl_parking_company>()
-                .Property(e => e.fld_name)
+            modelBuilder.Entity<tbl_Parking_Company>()
+                .Property(e => e.fld_Name)
+                .IsFixedLength();
+
+            modelBuilder.Entity<tbl_Parking_Company>()
+                .Property(e => e.fld_Adress)
+                .IsFixedLength();
+
+            modelBuilder.Entity<tbl_Parking_Company>()
+                .Property(e => e.fld_Email)
+                .IsFixedLength();
+
+            modelBuilder.Entity<tbl_Parking_Company>()
+                .Property(e => e.fld_Phone_No)
                 .IsUnicode(false);
 
-            modelBuilder.Entity<tbl_parking_company>()
-                .Property(e => e.fld_address)
-                .IsUnicode(false);
+            modelBuilder.Entity<tbl_Parking_Company>()
+                .Property(e => e.fld_Contact_Person)
+                .IsFixedLength();
 
-            modelBuilder.Entity<tbl_parking_company>()
-                .Property(e => e.fld_email)
-                .IsUnicode(false);
-
-            modelBuilder.Entity<tbl_parking_company>()
-                .Property(e => e.fld_phone_nr)
-                .IsUnicode(false);
-
-            modelBuilder.Entity<tbl_parking_company>()
-                .Property(e => e.fld_contact_person)
-                .IsUnicode(false);
+            modelBuilder.Entity<tbl_Parking_Company>()
+                .HasMany(e => e.tbl_Ticket)
+                .WithOptional(e => e.tbl_Parking_Company)
+                .HasForeignKey(e => e.fld_CVRNumber);
 
             modelBuilder.Entity<tbl_Ticket>()
-                .Property(e => e.fld_law_violation)
-                .IsUnicode(false);
+                .Property(e => e.fld_Law_Violation)
+                .IsFixedLength();
 
             modelBuilder.Entity<tbl_Ticket>()
                 .Property(e => e.fld_tax_number)
@@ -147,11 +148,7 @@ namespace Claimy_Dashboard.EF
                 .IsUnicode(false);
 
             modelBuilder.Entity<tbl_Ticket>()
-                .Property(e => e.fld_parkingspace_ID)
-                .IsUnicode(false);
-
-            modelBuilder.Entity<tbl_Ticket>()
-                .Property(e => e.fld_traffic_warden_no)
+                .Property(e => e.fld_amount)
                 .IsUnicode(false);
 
             modelBuilder.Entity<tbl_Ticket>()
@@ -160,16 +157,11 @@ namespace Claimy_Dashboard.EF
 
             modelBuilder.Entity<tbl_Ticket>()
                 .Property(e => e.fld_car_brand)
-                .IsUnicode(false);
+                .IsFixedLength();
 
             modelBuilder.Entity<tbl_Ticket>()
-                .Property(e => e.fld_CVRNR)
+                .Property(e => e.fld_CVRNumber)
                 .IsUnicode(false);
-
-            modelBuilder.Entity<tbl_Ticket>()
-                .HasMany(e => e.tbl_image)
-                .WithOptional(e => e.tbl_Ticket)
-                .HasForeignKey(e => e.fld_ticket_ID);
         }
     }
 }

@@ -11,15 +11,15 @@
         <Grid Height="70" VerticalAlignment="Top" Background="#FF537DA6">
             <TextBlock Text="Add Case" Foreground="White" FontSize="50" HorizontalAlignment="Center" VerticalAlignment="Center"/>
         </Grid>
-        <TextBox materialDesign:HintAssist.Hint=" Case No" Background="White" Width="150" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="160,110,282,329" Height="30"/>
-        <TextBox materialDesign:HintAssist.Hint=" P-fine Reason" Width="150" Background="White" HorizontalAlignment="Center" Margin="160,160,282,280" VerticalAlignment="Center" Height="30"/>
-        <TextBox materialDesign:HintAssist.Hint=" Precedens (optional)" Width="150" Background="White" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="160,207,282,234" Height="30"/>
-        <ComboBox Width="150" materialDesign:HintAssist.Hint=" Status" HorizontalAlignment="Center"  VerticalAlignment="Center" Margin="235,261,357,176" Background="White" Height="32" BorderThickness="0" materialDesign:ComboBoxAssist.ClassicMode="true" >
+        <TextBox materialDesign:HintAssist.Hint=" Case No" Background="White" Width="150" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="160,110,282,329" Height="30" x:Name="CaseNo" />
+        <TextBox materialDesign:HintAssist.Hint=" P-fine Reason" Width="150" Background="White" HorizontalAlignment="Center" Margin="160,160,282,280" VerticalAlignment="Center" Height="30" x:Name="fine_reason"/>
+        <TextBox materialDesign:HintAssist.Hint=" Precedens (optional)" Width="150" Background="White" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="160,207,282,234" Height="30" x:Name="Precedens"/>
+        <ComboBox x:Name="StatusCombo" Width="150" materialDesign:HintAssist.Hint=" Status" HorizontalAlignment="Center"  VerticalAlignment="Center" Margin="235,261,357,176" Background="White" Height="32" BorderThickness="0" materialDesign:ComboBoxAssist.ClassicMode="true" >
             <ComboBoxItem Width="150" BorderThickness="0">On going</ComboBoxItem>
             <ComboBoxItem Width="150" BorderThickness="0">Pending</ComboBoxItem>
             <ComboBoxItem Width="150" BorderThickness="0">Done</ComboBoxItem>
             <ComboBoxItem Width="150" BorderThickness="0">Not specified</ComboBoxItem>
         </ComboBox>
-        <Button Height="30" Width="80" Background="#FF537DA6" Margin="259,329,451,110" Content="Submit"/>
+        <Button Height="30" Width="80" Background="#FF537DA6" Margin="259,329,451,110" Content="Submit" Click="SubmitCase"/>
     </Grid>
 </Window>

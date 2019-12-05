@@ -19,21 +19,21 @@ namespace Claimy_Dashboard.EF
         public int fld_Customer_ID { get; set; }
 
         [StringLength(50)]
-        public string fld_name { get; set; }
+        public string fld_Name { get; set; }
 
         [StringLength(50)]
-        public string fld_email { get; set; }
+        public string fld_Adress { get; set; }
 
         [StringLength(50)]
-        public string fld_address { get; set; }
+        public string fld_Email { get; set; }
 
-        [StringLength(50)]
-        public string fld_phone_no { get; set; }
+        [StringLength(15)]
+        public string fld_Phone_No { get; set; }
 
-        [StringLength(30)]
-        public string fld_password { get; set; }
+        [StringLength(25)]
+        public string fld_Password { get; set; }
 
-        public int fld_Country { get; set; }
+        public int? fld_Country_Number { get; set; }
 
         public virtual tbl_Country_List tbl_Country_List { get; set; }
 

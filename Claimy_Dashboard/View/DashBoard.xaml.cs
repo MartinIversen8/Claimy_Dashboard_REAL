@@ -13,7 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace Claimy_Dashboard
+namespace Claimy_Dashboard.View
 {
     /// <summary>
     /// Interaction logic for Dashboard.xaml
@@ -43,11 +43,13 @@ namespace Claimy_Dashboard
         private void CalledHelp(object sender, RoutedEventArgs e)
         {
             MessageBox.Show("Why are you gay?");
+            
         }
 
         private void OpenAddCase(object sender, MouseButtonEventArgs e)
         {
-              
+            AddCase popUp = new AddCase();
+            popUp.Show();
         }
     }
 }

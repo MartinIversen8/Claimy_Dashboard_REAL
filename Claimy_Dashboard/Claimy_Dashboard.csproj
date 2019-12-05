@@ -71,12 +71,12 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="EF\ClaimyEntities.cs" />
-    <Compile Include="EF\tbl_case.cs" />
-    <Compile Include="EF\tbl_Claimy_Emp.cs" />
+    <Compile Include="EF\tbl_Case.cs" />
+    <Compile Include="EF\tbl_Claimy_Employee.cs" />
     <Compile Include="EF\tbl_Country_List.cs" />
     <Compile Include="EF\tbl_Customer.cs" />
-    <Compile Include="EF\tbl_image.cs" />
-    <Compile Include="EF\tbl_parking_company.cs" />
+    <Compile Include="EF\tbl_Image.cs" />
+    <Compile Include="EF\tbl_Parking_Company.cs" />
     <Compile Include="EF\tbl_Ticket.cs" />
     <Compile Include="View\AddCase.xaml.cs">
       <DependentUpon>AddCase.xaml</DependentUpon>
