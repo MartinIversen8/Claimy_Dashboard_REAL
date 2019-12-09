@@ -32,6 +32,24 @@ namespace Claimy_Dashboard.View
         private void SubmitCase(object sender, RoutedEventArgs e)
         {
             
+            using (var context = new ClaimyEntities())
+            {
+                try
+                {
+                    // prøv at få fine-reason og case_no til at komme automatisk 
+                    var @case = new tbl_Case() { fld_Case_NO = 898990, fld_ParkingFine_Reason = fine_reason.Text, fld_Precedens = Precedens.Text, fld_Status = StatusCombo.Text, fld_EMP_ID = 999999999 };
+                    context.tbl_Case.Add(@case);
+                    context.SaveChanges();
+                    // Is it successfull maybe
+                    Console.WriteLine("" + @case.fld_Case_NO);
+                }
+                catch (Exception ex)
+                {
+
+                    Console.WriteLine(ex.InnerException.Message);
+                }
+            
+            }
 
             Precedens.Text = "";
             CaseNo.Text = "";
@@ -39,5 +57,7 @@ namespace Claimy_Dashboard.View
             fine_reason.Text = "";
 
         }
+
+        
     }
 }

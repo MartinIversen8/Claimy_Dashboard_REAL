@@ -8,6 +8,7 @@ namespace Claimy_Dashboard.EF
 
     public partial class tbl_Case
     {
+       
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int fld_Case_NO { get; set; }

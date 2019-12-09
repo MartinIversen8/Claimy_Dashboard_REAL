@@ -10,8 +10,8 @@
 
     <Grid Background="LightGray">
         <Grid HorizontalAlignment="Center" VerticalAlignment="Center" Height="124" Width="488" Margin="3,95,1,350">
-            <TextBox x:Name="user" HorizontalAlignment="Center" VerticalAlignment="Top" Width="230" Height="30" Background="White" materialDesign:HintAssist.Hint="Username"/>
-            <TextBox x:Name="password" HorizontalAlignment="Center" VerticalAlignment="Center" Width="230" Height="30" Background="White" materialDesign:HintAssist.Hint="Password" />
+            <TextBox x:Name="LoginUsername" HorizontalAlignment="Center" VerticalAlignment="Top" Width="230" Height="30" Background="White" materialDesign:HintAssist.Hint="Username (E-mail)"/>
+            <TextBox x:Name="LoginPassword" HorizontalAlignment="Center" VerticalAlignment="Center" Width="230" Height="30" Background="White" materialDesign:HintAssist.Hint="Password" />
         </Grid>
         <Button x:Name="loginButton" Content="Login" Width="100" Height="30" Background="#FF537DA6" HorizontalAlignment="Center" Click="TryLogin"/>
     </Grid>

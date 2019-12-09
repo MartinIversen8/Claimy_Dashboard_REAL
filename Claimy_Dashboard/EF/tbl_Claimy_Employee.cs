@@ -39,5 +39,14 @@ namespace Claimy_Dashboard.EF
         public virtual ICollection<tbl_Case> tbl_Case { get; set; }
 
         public virtual tbl_Country_List tbl_Country_List { get; set; }
-    }
+
+        public override string ToString()
+        {
+            // Since the PetName column could be empty, supply
+            // the default name of **No Name**.
+
+            return $"{this.fld_Employee_ID}, {this.fld_Name}, {this.fld_Adress}, {this.fld_Email}, {this.fld_Phone_No}, {this.fld_Password}, {this.fld_Country_Number}";
+        }
 }
+
+ }
