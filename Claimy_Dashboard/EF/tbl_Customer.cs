@@ -11,21 +11,18 @@ namespace Claimy_Dashboard.EF
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public tbl_Customer()
         {
-            tbl_Ticket = new HashSet<tbl_Ticket>();
+            tbl_Ticket_Case = new HashSet<tbl_Ticket_Case>();
         }
 
         [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
-        public int fld_Customer_ID { get; set; }
+        [StringLength(50)]
+        public string fld_Email { get; set; }
 
         [StringLength(50)]
         public string fld_Name { get; set; }
 
         [StringLength(50)]
         public string fld_Adress { get; set; }
-
-        [StringLength(50)]
-        public string fld_Email { get; set; }
 
         [StringLength(15)]
         public string fld_Phone_No { get; set; }
@@ -38,6 +35,6 @@ namespace Claimy_Dashboard.EF
         public virtual tbl_Country_List tbl_Country_List { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<tbl_Ticket> tbl_Ticket { get; set; }
+        public virtual ICollection<tbl_Ticket_Case> tbl_Ticket_Case { get; set; }
     }
 }

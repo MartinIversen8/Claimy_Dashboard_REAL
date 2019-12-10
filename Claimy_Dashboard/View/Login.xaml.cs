@@ -39,29 +39,24 @@ namespace Claimy_Dashboard.View
             {
                 try
                 {
-                    string userData = "";
-                    string passwordData = "";
-
-                    //var userDB = context.tbl_Claimy_Employee.SqlQuery("select fld_Email from tbl_Claimy_Employee where fld_Email= '" + user + "' and fld_Password = '" + password + "'").ToList();
-                    //var passwordDB = context.tbl_Claimy_Employee.SqlQuery("select fld_Password from tbl_Claimy_Employee where fld_Email= '" + user + "' and fld_Password = '" + password + "'");
-
-                    //foreach (tbl_Claimy_Employee employee in context.tbl_Claimy_Employee)
-                    //{
-                    //    Console.WriteLine("------------------------------------------------------DET HER ER USER "+user);
-                    //    if (employee.fld_Email.Equals(user))
-                    //    {
-                    //        Console.WriteLine(employee.fld_Adress +"DET VIRKER NU ------------------------------------------------- ");
-                    //    }
-                    //}
-
+                    
                     var userDataLinQ = from emp in context.tbl_Claimy_Employee where emp.fld_Email.Equals(user) && emp.fld_Password.Equals(password) select emp;
 
                     foreach (var emp in userDataLinQ)
                     {
-                        userData = ""+emp.fld_Email;                         
+                        if (emp.fld_Email.Equals(user) && emp.fld_Password.Equals(password))
+                        {
+                            // switching view to Dashborad
+                            DashBoard main = new DashBoard();
+                            App.Current.MainWindow = main;
+                            this.Close();
+                            main.Show();
+                        }
+                                                                    
                     }
 
-                    Console.WriteLine(userData+"VIRK NUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUU");
+                   
+                  
 
                 }
                 catch (Exception ex)
@@ -70,13 +65,9 @@ namespace Claimy_Dashboard.View
                     Console.WriteLine(ex.Message);
                 }  
             }
-            DashBoard main = new DashBoard();
+           
 
-            App.Current.MainWindow = main;
-            this.Close();
-            main.Show();
-
-            // switching view to Dashborad
+            
 
         }
     }

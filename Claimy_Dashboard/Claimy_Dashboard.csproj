@@ -71,15 +71,17 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="EF\ClaimyEntities.cs" />
-    <Compile Include="EF\tbl_Case.cs" />
     <Compile Include="EF\tbl_Claimy_Employee.cs" />
     <Compile Include="EF\tbl_Country_List.cs" />
     <Compile Include="EF\tbl_Customer.cs" />
     <Compile Include="EF\tbl_Image.cs" />
     <Compile Include="EF\tbl_Parking_Company.cs" />
-    <Compile Include="EF\tbl_Ticket.cs" />
+    <Compile Include="EF\tbl_Ticket_Case.cs" />
     <Compile Include="View\AddCase.xaml.cs">
       <DependentUpon>AddCase.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Full_Case_Ticket_View.xaml.cs">
+      <DependentUpon>Full_Case_Ticket_View.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\Login.xaml.cs">
       <DependentUpon>Login.xaml</DependentUpon>
@@ -100,6 +102,10 @@
       <DependentUpon>DashBoard.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="View\Full_Case_Ticket_View.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\Login.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

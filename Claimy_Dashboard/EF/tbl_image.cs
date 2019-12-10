@@ -14,8 +14,9 @@ namespace Claimy_Dashboard.EF
 
         public byte[] fld_image { get; set; }
 
-        public int? fld_Ticket_ID { get; set; }
+        [StringLength(50)]
+        public string fld_Ticket_ID { get; set; }
 
-        public virtual tbl_Ticket tbl_Ticket { get; set; }
+        public virtual tbl_Ticket_Case tbl_Ticket_Case { get; set; }
     }
 }

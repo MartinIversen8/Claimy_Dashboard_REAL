@@ -11,21 +11,18 @@ namespace Claimy_Dashboard.EF
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public tbl_Claimy_Employee()
         {
-            tbl_Case = new HashSet<tbl_Case>();
+            tbl_Ticket_Case = new HashSet<tbl_Ticket_Case>();
         }
 
         [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
-        public int fld_Employee_ID { get; set; }
+        [StringLength(50)]
+        public string fld_Email { get; set; }
 
         [StringLength(50)]
         public string fld_Name { get; set; }
 
         [StringLength(50)]
         public string fld_Adress { get; set; }
-
-        [StringLength(50)]
-        public string fld_Email { get; set; }
 
         [StringLength(15)]
         public string fld_Phone_No { get; set; }
@@ -35,18 +32,9 @@ namespace Claimy_Dashboard.EF
 
         public int? fld_Country_Number { get; set; }
 
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<tbl_Case> tbl_Case { get; set; }
-
         public virtual tbl_Country_List tbl_Country_List { get; set; }
 
-        public override string ToString()
-        {
-            // Since the PetName column could be empty, supply
-            // the default name of **No Name**.
-
-            return $"{this.fld_Employee_ID}, {this.fld_Name}, {this.fld_Adress}, {this.fld_Email}, {this.fld_Phone_No}, {this.fld_Password}, {this.fld_Country_Number}";
-        }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<tbl_Ticket_Case> tbl_Ticket_Case { get; set; }
+    }
 }
-
- }

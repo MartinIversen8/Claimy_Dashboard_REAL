@@ -11,7 +11,7 @@ namespace Claimy_Dashboard.EF
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public tbl_Parking_Company()
         {
-            tbl_Ticket = new HashSet<tbl_Ticket>();
+            tbl_Ticket_Case = new HashSet<tbl_Ticket_Case>();
         }
 
         [Key]
@@ -38,6 +38,6 @@ namespace Claimy_Dashboard.EF
         public virtual tbl_Country_List tbl_Country_List { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<tbl_Ticket> tbl_Ticket { get; set; }
+        public virtual ICollection<tbl_Ticket_Case> tbl_Ticket_Case { get; set; }
     }
 }

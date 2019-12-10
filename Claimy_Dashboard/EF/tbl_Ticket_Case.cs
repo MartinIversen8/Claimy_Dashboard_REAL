@@ -6,17 +6,26 @@ namespace Claimy_Dashboard.EF
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    public partial class tbl_Ticket
+    public partial class tbl_Ticket_Case
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public tbl_Ticket()
+        public tbl_Ticket_Case()
         {
             tbl_Image = new HashSet<tbl_Image>();
         }
 
         [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
-        public int fld_Ticket_ID { get; set; }
+        [StringLength(50)]
+        public string fld_Case_Ticket_ID { get; set; }
+
+        [StringLength(50)]
+        public string fld_ParkingFine_Reason { get; set; }
+
+        [StringLength(50)]
+        public string fld_Precedens { get; set; }
+
+        [StringLength(25)]
+        public string fld_Status { get; set; }
 
         [StringLength(100)]
         public string fld_Law_Violation { get; set; }
@@ -45,7 +54,13 @@ namespace Claimy_Dashboard.EF
         [StringLength(10)]
         public string fld_CVRNumber { get; set; }
 
-        public int? fld_Customer_ID { get; set; }
+        [StringLength(50)]
+        public string fld_Customer_Email { get; set; }
+
+        [StringLength(50)]
+        public string fld_EMP_ID { get; set; }
+
+        public virtual tbl_Claimy_Employee tbl_Claimy_Employee { get; set; }
 
         public virtual tbl_Customer tbl_Customer { get; set; }
 
