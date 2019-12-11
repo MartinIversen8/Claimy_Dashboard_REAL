@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Claimy_Dashboard.EF;
+using Claimy_Dashboard.View;
 
 namespace Claimy_Dashboard.View
 {
@@ -22,12 +23,13 @@ namespace Claimy_Dashboard.View
     public partial class DashBoard : Window
     {
         public List<tbl_Ticket_Case> CasesTickets { get; set; }
+        
         public DashBoard()
         {
             InitializeComponent();
             caseListView.Visibility = Visibility.Hidden;
             CasesTickets = new List<tbl_Ticket_Case>();
-            CasesTickets = CaseLsitMaker();            
+            CasesTickets = ViewModel.ListsForListviews.CaseLsitMaker();            
             DataContext = this;
             
         }
@@ -59,28 +61,19 @@ namespace Claimy_Dashboard.View
             popUp.Show();
         }
 
-        private static List<tbl_Ticket_Case> CaseLsitMaker()
+        private void ShowSelectedCase(object sender, MouseButtonEventArgs e)
         {
-            using (var context = new ClaimyEntities()) 
-            {
-                try
-                {
-                    var caseTicket = from c in context.tbl_Ticket_Case select c;
-                    List<tbl_Ticket_Case> myCases = new List<tbl_Ticket_Case>();
-                    foreach (var c in caseTicket)
-                    {
-                        myCases.Add(c);
-                    }
-
-                    return myCases;
-                    
-                }
-                catch (Exception ex)
-                {
-                    Console.WriteLine(ex.Message);
-                    throw;
-                }
-            }
+            Full_Case_Ticket_View fctw = new Full_Case_Ticket_View();
+            fctw.Show();
+            var selectedItem = caseListView.SelectedItem as tbl_Ticket_Case;
+            var caseID = selectedItem.fld_Case_Ticket_ID;
+            View.Full_Case_Ticket_View fct = new Full_Case_Ticket_View();
+            CasesTickets = new List<tbl_Ticket_Case>();
+            CasesTickets = ViewModel.ListsForListviews.FullSingleTicketCase(caseID);
+            Console.WriteLine("VIRKER DET"+caseID);
+            //DataContext = CasesTickets;
+            fctw.fullView.ItemsSource = CasesTickets;
         }
+
     }
 }

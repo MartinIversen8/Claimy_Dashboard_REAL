@@ -27,47 +27,23 @@ namespace Claimy_Dashboard.View
 
         private void TryLogin(object sender, RoutedEventArgs e)
         {
-            Console.WriteLine("------------------------------------------------------------------------------------------");
-            // claus@mail.dk
-            string user = LoginUsername.Text;
-            // 321
-            string password = LoginPassword.Text;
-
-            //Console.WriteLine(user+" and  "+password);
-
-            using (var context = new ClaimyEntities())
-            {
-                try
-                {
-                    
-                    var userDataLinQ = from emp in context.tbl_Claimy_Employee where emp.fld_Email.Equals(user) && emp.fld_Password.Equals(password) select emp;
-
-                    foreach (var emp in userDataLinQ)
-                    {
-                        if (emp.fld_Email.Equals(user) && emp.fld_Password.Equals(password))
-                        {
-                            // switching view to Dashborad
-                            DashBoard main = new DashBoard();
-                            App.Current.MainWindow = main;
-                            this.Close();
-                            main.Show();
-                        }
-                                                                    
-                    }
-
-                   
-                  
-
-                }
-                catch (Exception ex)
-                {
-
-                    Console.WriteLine(ex.Message);
-                }  
-            }
-           
-
             
+            // the username is claus@mail.dk
+            string user = LoginUsername.Text;
+            //  password is 321
+            string password = LoginPassword.Password;                       
+
+           
+            if (ViewModel.LoginViewModel.TryLogin(user, password))
+            {
+                DashBoard main = new DashBoard();
+                main.Show();
+                this.Close();
+            }
+            else 
+            {
+                MessageBox.Show("The username or password is incorrect \n Try again");
+            }
 
         }
     }

@@ -5,21 +5,34 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Claimy_Dashboard.View"
         mc:Ignorable="d"
-        Title="Full_Case_Ticket_View" Height="450" Width="800">
+        Title="Full_Case_Ticket_View" Height="600" Width="1500">
     <Grid Background="LightGray">
         <Grid Height="70" VerticalAlignment="Top" Background="#FF537DA6">
             <TextBlock Text="Full Case/Ticket View" Foreground="White" FontSize="50" HorizontalAlignment="Center" VerticalAlignment="Center"/>
         </Grid>
         <Grid Margin="0,71,0,0">
-            <ListView x:Name="fullView" HorizontalAlignment="Left" VerticalAlignment="Top" Width="800" Height="150">
+            <ListView x:Name="fullView" HorizontalAlignment="Left" VerticalAlignment="Top" Width="1500" Height="150" Margin="0,0,-1,0" ItemsSource="{Binding CaseTickets}">
                 <ListView.View>
                     <GridView>
-                        <GridViewColumn Header=""></GridViewColumn>
+                        <GridViewColumn Header="Case" Width="75" DisplayMemberBinding="{Binding fld_Case_Ticket_ID}"></GridViewColumn>
+                        <GridViewColumn Header="Law violation" Width="115" DisplayMemberBinding="{Binding fld_Law_Violation}"></GridViewColumn>
+                        <GridViewColumn Header="Tax number" Width="115" DisplayMemberBinding="{Binding fld_tax_number}"></GridViewColumn>
+                        <GridViewColumn Header="Date" Width="200" DisplayMemberBinding="{Binding fld_date_time}"></GridViewColumn>
+                        <GridViewColumn Header="Car reg." Width="100" DisplayMemberBinding="{Binding fld_car_reg_no}"></GridViewColumn>
+                        <GridViewColumn Header="Parking Space ID" Width="130" DisplayMemberBinding="{Binding fld_parkingspace_id}"></GridViewColumn>
+                        <GridViewColumn Header="Warden ID" Width="100" DisplayMemberBinding="{Binding fld_traffic_warden_no}"></GridViewColumn>
+                        <GridViewColumn Header="Amount" Width="125" DisplayMemberBinding="{Binding fld_amount}"></GridViewColumn>
+                        <GridViewColumn Header="Payment Info" Width="120" DisplayMemberBinding="{Binding fld_payment_info}"></GridViewColumn>
+                        <GridViewColumn Header="Car Brand" Width="100" DisplayMemberBinding="{Binding fld_car_brand}"></GridViewColumn>
+                        <GridViewColumn Header="P-fine reason" Width="110" DisplayMemberBinding="{Binding fld_ParkingFine_Reason}"></GridViewColumn>
+                        <GridViewColumn Header="Precendens" Width="100" DisplayMemberBinding="{Binding fld_Precedens}"></GridViewColumn>
+                        <GridViewColumn Header="Status" Width="90" DisplayMemberBinding="{Binding fld_Status}"></GridViewColumn>
+
                     </GridView>
                 </ListView.View>
-            </ListView>    
+            </ListView>
         </Grid>
-        
+
 
     </Grid>
 </Window>

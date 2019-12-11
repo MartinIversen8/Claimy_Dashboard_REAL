@@ -73,10 +73,12 @@
         <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="201,71,-2,7" Height="793">
             <StackPanel Orientation="Horizontal" VerticalAlignment="Top" Margin="0,1,0,0" Height="791">
 
-                <ListView x:Name="caseListView" VerticalAlignment="Top" HorizontalAlignment="Left" Height="790" Margin="0,1,0,0" Width="1379" ItemsSource="{ Binding CasesTickets}">
-                    <ListView.View>
-                        <GridView>
-                            <GridViewColumn Header="Case" Width="200" DisplayMemberBinding="{Binding fld_Case_Ticket_ID}"></GridViewColumn>
+                <ListView x:Name="caseListView" VerticalAlignment="Top" HorizontalAlignment="Left" Height="790" Margin="0,1,0,0" Width="1379" ItemsSource="{ Binding CasesTickets}" PreviewMouseLeftButtonUp="ShowSelectedCase">
+                    
+                    <ListView.View x:Uid="caseListviewView">
+                        
+                        <GridView x:Name="caseGridView" >
+                            <GridViewColumn x:Name="caseID" Header="Case" Width="200" DisplayMemberBinding="{Binding fld_Case_Ticket_ID}"></GridViewColumn>
                             <GridViewColumn Header="P-fine Reason" Width="200" DisplayMemberBinding="{Binding fld_ParkingFine_Reason}"></GridViewColumn>
                             <GridViewColumn Header="Precedens" Width="200" DisplayMemberBinding="{Binding fld_Precedens}"></GridViewColumn>
                             <GridViewColumn Header="Status" Width="200" DisplayMemberBinding="{Binding fld_Status}"></GridViewColumn>
