@@ -31,6 +31,8 @@
                     </GridView>
                 </ListView.View>
             </ListView>
+            <Button Content="Show the Pictures" HorizontalAlignment="Left" Margin="64,348,0,0" VerticalAlignment="Top" Width="163" Click="Button_Click"/>
+            <Image x:Name="iShowImage" HorizontalAlignment="Left" Height="223" Margin="294,219,0,0" VerticalAlignment="Top" Width="288"/>
         </Grid>
 
 

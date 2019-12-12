@@ -77,6 +77,7 @@
     <Compile Include="EF\tbl_Image.cs" />
     <Compile Include="EF\tbl_Parking_Company.cs" />
     <Compile Include="EF\tbl_Ticket_Case.cs" />
+    <Compile Include="ViewModel\ImageFromDB.cs" />
     <Compile Include="ViewModel\ListsForListviews.cs" />
     <Compile Include="ViewModel\LoginViewModel.cs" />
     <Compile Include="View\AddCase.xaml.cs">
