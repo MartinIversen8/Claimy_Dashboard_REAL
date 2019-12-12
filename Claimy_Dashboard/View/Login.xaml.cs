@@ -31,19 +31,25 @@ namespace Claimy_Dashboard.View
             // the username is claus@mail.dk
             string user = LoginUsername.Text;
             //  password is 321
-            string password = LoginPassword.Password;                       
+            string password = LoginPassword.Password;
 
-           
+            
+
             if (ViewModel.LoginViewModel.TryLogin(user, password))
             {
                 DashBoard main = new DashBoard();
                 main.Show();
+                main.loggedInPerson.Text = ViewModel.LoginViewModel.ChangeLogInName(user, password);
                 this.Close();
             }
             else 
             {
                 MessageBox.Show("The username or password is incorrect \n Try again");
+                LoginUsername.Text = "";
+                LoginPassword.Password = "";
             }
+
+           
 
         }
     }

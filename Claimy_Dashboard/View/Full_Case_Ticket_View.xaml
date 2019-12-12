@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Claimy_Dashboard.View"
         mc:Ignorable="d"
-        Title="Full_Case_Ticket_View" Height="600" Width="1500">
+        Title="Full_Case_Ticket_View" Height="800" Width="1500"  WindowStartupLocation="CenterScreen" ResizeMode="CanMinimize">
     <Grid Background="LightGray">
         <Grid Height="70" VerticalAlignment="Top" Background="#FF537DA6">
             <TextBlock Text="Full Case/Ticket View" Foreground="White" FontSize="50" HorizontalAlignment="Center" VerticalAlignment="Center"/>
@@ -30,9 +30,9 @@
 
                     </GridView>
                 </ListView.View>
-            </ListView>
-            <Button Content="Show the Pictures" HorizontalAlignment="Left" Margin="64,348,0,0" VerticalAlignment="Top" Width="163" Click="Button_Click"/>
-            <Image x:Name="iShowImage" HorizontalAlignment="Left" Height="223" Margin="294,219,0,0" VerticalAlignment="Top" Width="288"/>
+            </ListView>          
+            <Image x:Name="iShowImage1" HorizontalAlignment="Left" Height="423" Margin="294,171,0,0" VerticalAlignment="Top" Width="461"/>
+            <Image x:Name="iShowImage2" HorizontalAlignment="Left" Height="423" Margin="810,171,0,0" VerticalAlignment="Top" Width="461"/>
         </Grid>
 
 

@@ -21,7 +21,7 @@
             </Grid>
 
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
-                <TextBlock Text="Use Databinding" VerticalAlignment="Center" FontSize="16"/>
+                <TextBlock x:Name="loggedInPerson" VerticalAlignment="Center" FontSize="16"/>
                 <materialDesign:PopupBox PlacementMode="BottomAndAlignRightEdges" StaysOpen="False" Margin="10">
                     <StackPanel Width="150">
                         <Button Content="Settings"/>
@@ -49,7 +49,7 @@
 
                 </Grid>
                 <ListView Foreground="#FF537DA6" >
-                    <ListViewItem Height="60" PreviewMouseLeftButtonUp="HideAll">
+                    <ListViewItem Height="60" PreviewMouseLeftButtonUp="ShowHomePage">
                         <StackPanel Orientation="Horizontal">
                             <materialDesign:PackIcon Kind="Home" Width="25" Height="25" VerticalAlignment="Center"/>
                             <TextBlock Text="Home" VerticalAlignment="Center" Margin="20 10"/>
@@ -71,6 +71,9 @@
             </StackPanel>
         </Grid>
         <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="201,71,-2,7" Height="793">
+            <Grid x:Name="homePage" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="1,4,3,-1">
+                 
+            </Grid>
             <StackPanel Orientation="Horizontal" VerticalAlignment="Top" Margin="0,1,0,0" Height="791">
 
                 <ListView x:Name="caseListView" VerticalAlignment="Top" HorizontalAlignment="Left" Height="790" Margin="0,1,0,0" Width="1379" ItemsSource="{ Binding CasesTickets}" PreviewMouseLeftButtonUp="ShowSelectedCase">
