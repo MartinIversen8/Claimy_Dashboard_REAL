@@ -99,5 +99,11 @@ namespace Claimy_Dashboard.View
 
         }
 
+        private void EditEmployeesBtn(object sender, MouseButtonEventArgs e)
+        {
+            EditEmployees editEmployees = new EditEmployees();
+            editEmployees.Show();
+        }
+
     }
 }

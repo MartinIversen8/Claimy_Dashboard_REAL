@@ -57,5 +57,53 @@ namespace Claimy_Dashboard.ViewModel
             }
         }
 
+        public static List<string> EmployeeNameList()
+        {
+            using (var context = new ClaimyEntities())
+            {
+                try
+                {
+                    var emps = from e in context.tbl_Claimy_Employee select e.fld_Name;
+                    List <string> myEmps = new List<string>();
+                    foreach (var e in emps)
+                    {
+                        myEmps.Add(e);
+                    }
+
+                    return myEmps;
+
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.Message);
+                    throw;
+                }
+            }
+        }
+
+        public static List<tbl_Claimy_Employee> SingleEmployeeDataList(string name)
+        {
+            using (var context = new ClaimyEntities())
+            {
+                try
+                {
+                    var emps = from e in context.tbl_Claimy_Employee where e.fld_Name.Equals(name) select e;
+                    List<tbl_Claimy_Employee> myEmps = new List<tbl_Claimy_Employee>();
+                    foreach (var e in emps)
+                    {
+                        myEmps.Add(e);
+                    }
+
+                    return myEmps;
+
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.Message);
+                    throw;
+                }
+            }
+        }
+
     }
 }

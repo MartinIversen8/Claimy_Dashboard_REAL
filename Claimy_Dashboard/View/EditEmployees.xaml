@@ -1,0 +1,70 @@
+﻿<Window x:Class="Claimy_Dashboard.View.EditEmployees"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Claimy_Dashboard.View"
+         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        mc:Ignorable="d"
+        Title="EditEmployees" Height="450" Width="800">
+        <Grid>
+            
+        <Grid Height="70" VerticalAlignment="Top" Background="#FF537DA6">
+            <TextBlock Text="Add/Edit Employee(s)" Foreground="White" FontSize="50" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        </Grid>
+        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Height="175" Width="200 " x:Name="ChoiceEmployee" Visibility="Hidden" >
+            <ListView Foreground="#FF537DA6">
+                <ListViewItem Height="60" PreviewMouseLeftButtonUp="AddNewEmployee">
+                    <StackPanel Orientation="Horizontal">
+                        <materialDesign:PackIcon Kind="PersonAdd" Width="25" Height="25" VerticalAlignment="Center"/>
+                        <TextBlock Text="Add new Employee" VerticalAlignment="Center" Margin="20 10"/>
+                    </StackPanel>
+                </ListViewItem>
+                <ListViewItem Height="60" PreviewMouseLeftButtonUp="EditEmployee">
+                    <StackPanel Orientation="Horizontal">
+                        <materialDesign:PackIcon Kind="PersonEdit" Width="25" Height="25" VerticalAlignment="Center"/>
+                        <TextBlock Text="Edit Employee" VerticalAlignment="Center" Margin="20 10"/>
+                    </StackPanel>
+                </ListViewItem>
+                <ListViewItem Height="60" PreviewMouseLeftButtonUp="RemoveEmployee">
+                    <StackPanel Orientation="Horizontal">
+                        <materialDesign:PackIcon Kind="PersonMinus" Width="25" Height="25" VerticalAlignment="Center"/>
+                        <TextBlock Text="Rmove Employee" VerticalAlignment="Center" Margin="20 10"/>
+                    </StackPanel>
+                </ListViewItem>
+                
+            </ListView>
+        </StackPanel>
+        <Grid Width="200" Height="350" HorizontalAlignment="Center" x:Name="AddEmployeeTxtb" Visibility="Hidden">           
+        
+        <StackPanel Width="200" Height="250" HorizontalAlignment="Center" >            
+            <TextBox x:Name="EmpName" Height="30" Width="200" materialDesign:HintAssist.Hint="Name"/>
+                <TextBox x:Name="EmpAddress" Height="30" Width="200" materialDesign:HintAssist.Hint="Address"/>
+                <TextBox x:Name="EmpEmail" Height="30" Width="200" materialDesign:HintAssist.Hint="E-mail"/>
+                <TextBox x:Name="EmpPhone" Height="30" Width="200" materialDesign:HintAssist.Hint="Phone Number"/>
+                <TextBox x:Name="EmpPassword" Height="30" Width="200" materialDesign:HintAssist.Hint="Password"/>
+                <TextBox x:Name="EmpCity" Height="30" Width="200" materialDesign:HintAssist.Hint="City"/>
+                <TextBox x:Name="EmpZipcode" Height="30" Width="200" materialDesign:HintAssist.Hint="Zipcode"/>
+                <TextBox x:Name="EmpCountry" Height="30" Width="200" materialDesign:HintAssist.Hint="Country"/>
+            </StackPanel>
+            <Button VerticalAlignment="Bottom" Width="100" Content="Submit" Background="#FF537DA6" BorderBrush="#FF537DA6" Click="AddNewEmp"/>
+        </Grid>
+        <Grid Width="200" Height="350" HorizontalAlignment="Center" x:Name="EditEmployeeGrid" >
+
+            <StackPanel Width="200" Height="250" HorizontalAlignment="Center" >
+                <ListBox ItemsSource="{Binding emplist}" x:Name="ListBoxEmps"></ListBox>
+                <ComboBox x:Name="EmpNameEditCombo" Height="30" Width="200" materialDesign:HintAssist.Hint="Name" materialDesign:ComboBoxAssist.ClassicMode="true" Loaded="EmpNameEdit_Loaded" DropDownClosed="EmpNameEditCombo_DropDownClosed">
+                  
+                </ComboBox>
+                <TextBox x:Name="EmpAddressEdit" Height="30" Width="200" materialDesign:HintAssist.Hint="Address"/>
+                <TextBox x:Name="EmpEmailEdit" Height="30" Width="200" materialDesign:HintAssist.Hint="E-mail"/>
+                <TextBox x:Name="EmpPhoneEdit" Height="30" Width="200" materialDesign:HintAssist.Hint="Phone Number"/>
+                <TextBox x:Name="EmpPasswordEdit" Height="30" Width="200" materialDesign:HintAssist.Hint="Password"/>
+                <TextBox x:Name="EmpCityEdit" Height="30" Width="200" materialDesign:HintAssist.Hint="City"/>
+                <TextBox x:Name="EmpZipcodeEdit" Height="30" Width="200" materialDesign:HintAssist.Hint="Zipcode"/>
+                <TextBox x:Name="EmpCountryEdit" Height="30" Width="200" materialDesign:HintAssist.Hint="Country"/>
+            </StackPanel>
+            <Button VerticalAlignment="Bottom" Width="100" Content="Edit" Background="#FF537DA6" BorderBrush="#FF537DA6" Click="EditAnEmployee"/>
+        </Grid>
+    </Grid>
+</Window>
