@@ -86,13 +86,13 @@ namespace Claimy_Dashboard.View
             if (images.Count >0)
             {            
             // converting the binary "image" to a real image and showing it 
-            fctw.iShowImage1.Source = image.ConvertToImage(images[0]);
+            fctw.iShowImage1.Source = ViewModel.ImageFromDB.ConvertToImage(images[0]);
             // if there is more than one iamge to the case. there can only be two
             if (images.Count >1)
             {
                 if (images[1] != null)
                 {
-                    fctw.iShowImage2.Source = image.ConvertToImage(images[1]);
+                    fctw.iShowImage2.Source = ViewModel.ImageFromDB.ConvertToImage(images[1]);
                 }
             }
             }

@@ -75,7 +75,7 @@ namespace Claimy_Dashboard.View
 
         private void RemoveBtn_Click(object sender, RoutedEventArgs e)
         {
-            
+            ViewModel.EditCustomerViewModel.RemoveEmployee(CustomerToremove.Text);
         }
 
         private void CancelBtn_Click(object sender, RoutedEventArgs e)
