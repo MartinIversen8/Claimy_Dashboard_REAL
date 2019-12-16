@@ -43,5 +43,38 @@ namespace Claimy_Dashboard.ViewModel
 
             
         }
+
+        public static List<tbl_Country_List> CountryLsit(string name, string email)
+        {
+           
+            using (var context = new ClaimyEntities())
+            {
+                try
+                {
+                    int clNumber = 0;
+                    var emps = from e in context.tbl_Claimy_Employee where e.fld_Name.Equals(name) && e.fld_Email.Equals(email) select e.fld_Country_Number;
+
+                    List < tbl_Country_List > myCl = new List<tbl_Country_List>();
+                    foreach (var e in emps)
+                    {
+                        clNumber = e.Value;
+                    }
+
+                    var cList = from cl in context.tbl_Country_List where cl.fld_Number == clNumber select cl;
+                    foreach (var cl in cList)
+                    {
+                        myCl.Add(cl);
+                    }
+
+                    return myCl;
+
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.Message);
+                    throw;
+                }
+            }
+        }
     }
 }

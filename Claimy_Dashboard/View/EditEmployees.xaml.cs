@@ -82,13 +82,22 @@ namespace Claimy_Dashboard.View
         private void EmpNameEditCombo_DropDownClosed(object sender, EventArgs e)
         {
             empList = ViewModel.ListsForListviews.SingleEmployeeDataList(EmpNameEditCombo.Text);
+            
             foreach (var emp in empList)
             {
                 EmpAddressEdit.Text = emp.fld_Adress;
                 EmpEmailEdit.Text = emp.fld_Email;
                 EmpPhoneEdit.Text = emp.fld_Phone_No;
                 EmpPasswordEdit.Text = emp.fld_Password;
+                             
 
+            }
+            country_Lists = ViewModel.EditEmployeeViewModel.CountryLsit(EmpNameEditCombo.Text,EmpEmailEdit.Text);
+            foreach (var cl in country_Lists)
+            {
+                EmpZipcodeEdit.Text = cl.fld_ZipCode;
+                EmpCountryEdit.Text = cl.fld_Country;
+                EmpCityEdit.Text = cl.fld_City;
             }
         }
     }
