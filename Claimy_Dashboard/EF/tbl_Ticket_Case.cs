@@ -57,11 +57,6 @@ namespace Claimy_Dashboard.EF
         [StringLength(50)]
         public string fld_Customer_Email { get; set; }
 
-        [StringLength(50)]
-        public string fld_EMP_ID { get; set; }
-
-        public virtual tbl_Claimy_Employee tbl_Claimy_Employee { get; set; }
-
         public virtual tbl_Customer tbl_Customer { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

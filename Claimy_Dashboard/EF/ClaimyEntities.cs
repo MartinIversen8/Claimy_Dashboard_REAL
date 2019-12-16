@@ -8,7 +8,7 @@ namespace Claimy_Dashboard.EF
     public partial class ClaimyEntities : DbContext
     {
         public ClaimyEntities()
-            : base("name=ClaimyEntities3")
+            : base("name=ClaimyEntities4")
         {
         }
 
@@ -40,11 +40,6 @@ namespace Claimy_Dashboard.EF
             modelBuilder.Entity<tbl_Claimy_Employee>()
                 .Property(e => e.fld_Password)
                 .IsUnicode(false);
-
-            modelBuilder.Entity<tbl_Claimy_Employee>()
-                .HasMany(e => e.tbl_Ticket_Case)
-                .WithOptional(e => e.tbl_Claimy_Employee)
-                .HasForeignKey(e => e.fld_EMP_ID);
 
             modelBuilder.Entity<tbl_Country_List>()
                 .Property(e => e.fld_Country)
@@ -177,10 +172,6 @@ namespace Claimy_Dashboard.EF
 
             modelBuilder.Entity<tbl_Ticket_Case>()
                 .Property(e => e.fld_Customer_Email)
-                .IsUnicode(false);
-
-            modelBuilder.Entity<tbl_Ticket_Case>()
-                .Property(e => e.fld_EMP_ID)
                 .IsUnicode(false);
 
             modelBuilder.Entity<tbl_Ticket_Case>()

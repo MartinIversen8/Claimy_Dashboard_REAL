@@ -23,6 +23,7 @@ namespace Claimy_Dashboard.ViewModel
 
                     foreach (var emp in userDataLinQ)
                     {
+                        // returning true if the username and password is equal to what is in the database. 
                         if (emp.fld_Email.Equals(username) && emp.fld_Password.Equals(password))
                         {
 
@@ -54,7 +55,7 @@ namespace Claimy_Dashboard.ViewModel
                    
                     // selecting record in database from the given parameters in the method
                     var userDataLinQ = from emp in context.tbl_Claimy_Employee where emp.fld_Email.Equals(username) && emp.fld_Password.Equals(password) select emp;
-
+                    // for getting the name of the person that has logged in 
                     foreach (var emp in userDataLinQ)
                     {
                         if (emp.fld_Email.Equals(username) && emp.fld_Password.Equals(password))

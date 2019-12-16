@@ -73,6 +73,13 @@
                             <TextBlock Text="Edit Employees" VerticalAlignment="Center" Margin="20 10"/>
                         </StackPanel>
                     </ListViewItem>
+                    <ListViewItem Height="60" PreviewMouseLeftButtonDown="EditCustomerBtn">
+                        <StackPanel Orientation="Horizontal">
+                            <materialDesign:PackIcon Kind="PersonEdit" Width="25" Height="25" VerticalAlignment="Center"/>
+                            <TextBlock Text="Edit Customers" VerticalAlignment="Center" Margin="20 10"/>
+                        </StackPanel>
+                    </ListViewItem>
+
                 </ListView>
             </StackPanel>
         </Grid>

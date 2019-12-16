@@ -12,7 +12,7 @@
         <Grid Height="70" VerticalAlignment="Top" Background="#FF537DA6">
             <TextBlock Text="Add/Edit Employee(s)" Foreground="White" FontSize="50" HorizontalAlignment="Center" VerticalAlignment="Center"/>
         </Grid>
-        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Height="175" Width="200 " x:Name="ChoiceEmployee" Visibility="Hidden" >
+        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Height="175" Width="200 " x:Name="ChoiceEmployee" >
             <ListView Foreground="#FF537DA6">
                 <ListViewItem Height="60" PreviewMouseLeftButtonUp="AddNewEmployee">
                     <StackPanel Orientation="Horizontal">
@@ -49,10 +49,10 @@
             </StackPanel>
             <Button VerticalAlignment="Bottom" Width="100" Content="Submit" Background="#FF537DA6" BorderBrush="#FF537DA6" Click="AddNewEmp"/>
         </Grid>
-        <Grid Width="200" Height="350" HorizontalAlignment="Center" x:Name="EditEmployeeGrid" >
+        <Grid Width="200" Height="350" HorizontalAlignment="Center" x:Name="EditEmployeeGrid" Visibility="Hidden" >
 
             <StackPanel Width="200" Height="250" HorizontalAlignment="Center" >
-                <ListBox ItemsSource="{Binding emplist}" x:Name="ListBoxEmps"></ListBox>
+                
                 <ComboBox x:Name="EmpNameEditCombo" Height="30" Width="200" materialDesign:HintAssist.Hint="Name" materialDesign:ComboBoxAssist.ClassicMode="true" Loaded="EmpNameEdit_Loaded" DropDownClosed="EmpNameEditCombo_DropDownClosed">
                   
                 </ComboBox>
@@ -65,6 +65,16 @@
                 <TextBox x:Name="EmpCountryEdit" Height="30" Width="200" materialDesign:HintAssist.Hint="Country"/>
             </StackPanel>
             <Button VerticalAlignment="Bottom" Width="100" Content="Edit" Background="#FF537DA6" BorderBrush="#FF537DA6" Click="EditAnEmployee"/>
+        </Grid>
+        <Grid Width="200" Height="350" HorizontalAlignment="Center" x:Name="RemoveEmployeeGrid"  Visibility="Hidden">
+            <StackPanel Width="200" Height="250" HorizontalAlignment="Center" >
+                <ComboBox x:Name="EmpToremove" Height="30" Width="200" materialDesign:HintAssist.Hint="Name" materialDesign:ComboBoxAssist.ClassicMode="true" Loaded="EmpToremove_Loaded">
+
+                </ComboBox>
+                
+            </StackPanel>
+            <Button x:Name="RemoveBtn" Content="Remove" HorizontalAlignment="Left" VerticalAlignment="Center" Background="#FF537DA6" BorderBrush="#FF537DA6" Click="RemoveBtn_Click"/>
+            <Button x:Name="CancelBtn" Content="Cancel" HorizontalAlignment="Right" VerticalAlignment="Center" Background="#FF537DA6" BorderBrush="#FF537DA6" Click="CancelBtn_Click"/>
         </Grid>
     </Grid>
 </Window>

@@ -7,6 +7,7 @@ namespace Claimy_Dashboard.EF
     using System.Data.Entity.Spatial;
     using System.IO;
     using System.Windows.Media.Imaging;
+
     public partial class tbl_Image
     {
         [Key]
@@ -20,19 +21,7 @@ namespace Claimy_Dashboard.EF
 
         public virtual tbl_Ticket_Case tbl_Ticket_Case { get; set; }
 
-        // til at gemme et billede i Database?? 
-        public byte[] BitmapSourceToByteArray(BitmapSource image)
-        {
-            using (var stream = new MemoryStream())
-            {
-                var encoder = new PngBitmapEncoder(); // or some other encoder
-                encoder.Frames.Add(BitmapFrame.Create(image));
-                encoder.Save(stream);
-                return stream.ToArray();
-            }                       
-        }
-
-        public  byte[] GetPhotoToBinary(string filePath)
+        public byte[] GetPhotoToBinary(string filePath)
         {
             FileStream stream = new FileStream(
                 filePath, FileMode.Open, FileAccess.Read);

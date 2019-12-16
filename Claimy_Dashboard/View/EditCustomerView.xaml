@@ -1,0 +1,62 @@
+﻿<Window x:Class="Claimy_Dashboard.View.EditCustomerView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Claimy_Dashboard.View"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        mc:Ignorable="d"
+        Title="EditCustomerView" Height="450" Width="800">
+    <Grid>
+
+        <Grid Height="70" VerticalAlignment="Top" Background="#FF537DA6">
+            <TextBlock Text="Edit/Remove Customer" Foreground="White" FontSize="50" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        </Grid>
+        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Height="175" Width="200 " x:Name="ChoiceCustomer" >
+            <ListView Foreground="#FF537DA6">
+                
+                <ListViewItem Height="60" PreviewMouseLeftButtonUp="EditCustomerOptionsShow">
+                    <StackPanel Orientation="Horizontal">
+                        <materialDesign:PackIcon Kind="UserEdit" Width="25" Height="25" VerticalAlignment="Center"/>
+                        <TextBlock Text="Edit Customer" VerticalAlignment="Center" Margin="20 10"/>
+                    </StackPanel>
+                </ListViewItem>
+                <ListViewItem Height="60" PreviewMouseLeftButtonUp="RemoveCustomerOptionShow">
+                    <StackPanel Orientation="Horizontal">
+                        <materialDesign:PackIcon Kind="UserRemove" Width="25" Height="25" VerticalAlignment="Center"/>
+                        <TextBlock Text="Rmove Customer" VerticalAlignment="Center" Margin="20 10"/>
+                    </StackPanel>
+                </ListViewItem>
+
+            </ListView>
+        </StackPanel>
+        
+        <Grid Width="200" Height="350" HorizontalAlignment="Center" x:Name="EditCustomerGrid" Visibility="Hidden" >
+
+            <StackPanel Width="200" Height="250" HorizontalAlignment="Center" >
+
+                <ComboBox x:Name="CusEmailEditCombo" Height="30" Width="200" materialDesign:HintAssist.Hint="Name" materialDesign:ComboBoxAssist.ClassicMode="true" Loaded="CusEmailEditCombo_Loaded" DropDownClosed="CusEmailEditCombo_DropDownClosed">
+
+                </ComboBox>
+                <TextBox x:Name="CusAddressEdit" Height="30" Width="200" materialDesign:HintAssist.Hint="Address"/>
+                <TextBox x:Name="CusNameEdit" Height="30" Width="200" materialDesign:HintAssist.Hint="E-mail"/>
+                <TextBox x:Name="CusPhoneEdit" Height="30" Width="200" materialDesign:HintAssist.Hint="Phone Number"/>
+                <TextBox x:Name="CusPasswordEdit" Height="30" Width="200" materialDesign:HintAssist.Hint="Password"/>
+                <TextBox x:Name="CusCityEdit" Height="30" Width="200" materialDesign:HintAssist.Hint="City"/>
+                <TextBox x:Name="CusZipcodeEdit" Height="30" Width="200" materialDesign:HintAssist.Hint="Zipcode"/>
+                <TextBox x:Name="CusCountryEdit" Height="30" Width="200" materialDesign:HintAssist.Hint="Country"/>
+            </StackPanel>
+            <Button x:Name="EditCusBtn" VerticalAlignment="Bottom" Width="100" Content="Edit" Background="#FF537DA6" BorderBrush="#FF537DA6" Click="EditCusBtn_Click"/>
+        </Grid>
+        <Grid Width="200" Height="350" HorizontalAlignment="Center" x:Name="RemoveCustomerGrid"  Visibility="Hidden">
+            <StackPanel Width="200" Height="250" HorizontalAlignment="Center" >
+                <ComboBox x:Name="CustomerToremove" Height="30" Width="200" materialDesign:HintAssist.Hint="Email" materialDesign:ComboBoxAssist.ClassicMode="true" Loaded="CustomerToremove_Loaded">
+
+                </ComboBox>
+
+            </StackPanel>
+            <Button x:Name="RemoveBtn" Content="Remove" HorizontalAlignment="Left" VerticalAlignment="Center" Background="#FF537DA6" BorderBrush="#FF537DA6" Click="RemoveBtn_Click"/>
+            <Button x:Name="CancelBtn" Content="Cancel" HorizontalAlignment="Right" VerticalAlignment="Center" Background="#FF537DA6" BorderBrush="#FF537DA6" Click="CancelBtn_Click"/>
+        </Grid>
+    </Grid>
+</Window>

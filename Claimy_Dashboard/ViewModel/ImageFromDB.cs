@@ -11,6 +11,7 @@ namespace Claimy_Dashboard.ViewModel
 {
     public class ImageFromDB 
     {
+        // converting a image from binary to an actual image
         public static List<byte[]> ListOfImages(string caseID)
         {
             tbl_Image image = new tbl_Image();
@@ -22,16 +23,16 @@ namespace Claimy_Dashboard.ViewModel
                 try
                 {
 
-
+                    // selecting images where caseId is equal to input
                     var imageBinary = from i in context.tbl_Image where i.fld_Ticket_ID.Equals(caseID) select i.fld_image;
-
+                    // adding images to a list that we return 
                     foreach (var item in imageBinary)
                     {
                         binaryImage = item;
                         binaryImages.Add(item);
                     }
 
-                
+                    // returning list
                     return binaryImages;
 
 
@@ -39,7 +40,7 @@ namespace Claimy_Dashboard.ViewModel
                 catch (Exception ex)
                 {
 
-                    //Console.WriteLine(ex.InnerException.Message);
+                    
                     Console.WriteLine(ex.Message);
                     return null;
                 }
