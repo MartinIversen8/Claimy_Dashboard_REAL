@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:Claimy_Dashboard.View"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         mc:Ignorable="d"
-        Title="EditCustomerView" Height="450" Width="800">
+        Title="EditCustomerView" Height="450" Width="800" WindowStartupLocation="CenterScreen">
     <Grid>
 
         <Grid Height="70" VerticalAlignment="Top" Background="#FF537DA6">
@@ -35,7 +35,7 @@
 
             <StackPanel Width="200" Height="250" HorizontalAlignment="Center" >
 
-                <ComboBox x:Name="CusEmailEditCombo" Height="30" Width="200" materialDesign:HintAssist.Hint="Name" materialDesign:ComboBoxAssist.ClassicMode="true" Loaded="CusEmailEditCombo_Loaded" DropDownClosed="CusEmailEditCombo_DropDownClosed">
+                <ComboBox x:Name="CusEmailEditCombo" Height="30" Width="200" materialDesign:HintAssist.Hint="Name" materialDesign:ComboBoxAssist.ClassicMode="true" Loaded="CusEmailEditCombo_Loaded" DropDownClosed="CusEmailEditCombo_DropDownClosed" >
 
                 </ComboBox>
                 <TextBox x:Name="CusAddressEdit" Height="30" Width="200" materialDesign:HintAssist.Hint="Address"/>

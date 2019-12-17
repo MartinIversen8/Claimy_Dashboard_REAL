@@ -33,7 +33,8 @@ namespace Claimy_Dashboard.EF
         [StringLength(30)]
         public string fld_tax_number { get; set; }
 
-        public DateTime? fld_date_time { get; set; }
+        [StringLength(25)]
+        public string fld_date_time { get; set; }
 
         [StringLength(20)]
         public string fld_car_reg_no { get; set; }
@@ -58,6 +59,8 @@ namespace Claimy_Dashboard.EF
         public string fld_Customer_Email { get; set; }
 
         public virtual tbl_Customer tbl_Customer { get; set; }
+
+        public virtual tbl_Customer tbl_Customer1 { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<tbl_Image> tbl_Image { get; set; }

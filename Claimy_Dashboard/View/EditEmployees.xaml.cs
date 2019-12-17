@@ -149,6 +149,9 @@ namespace Claimy_Dashboard.View
         private void RemoveBtn_Click(object sender, RoutedEventArgs e)
         {
             ViewModel.EditEmployeeViewModel.RemoveEmployee(EmpToremove.Text);
+            names = ViewModel.ListsForListviews.EmployeeNameList();
+            var combo = sender as ComboBox;
+            combo.ItemsSource = names;
         }
 
         // if you dont want to remove anyone it goes back to choices 

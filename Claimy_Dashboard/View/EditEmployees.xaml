@@ -52,8 +52,8 @@
         <Grid Width="200" Height="350" HorizontalAlignment="Center" x:Name="EditEmployeeGrid" Visibility="Hidden" >
 
             <StackPanel Width="200" Height="250" HorizontalAlignment="Center" >
-                
-                <ComboBox x:Name="EmpNameEditCombo" Height="30" Width="200" materialDesign:HintAssist.Hint="Name" materialDesign:ComboBoxAssist.ClassicMode="true" Loaded="EmpNameEdit_Loaded" DropDownClosed="EmpNameEditCombo_DropDownClosed">
+
+                <ComboBox x:Name="EmpNameEditCombo" Height="30" Width="200" materialDesign:HintAssist.Hint="Name" materialDesign:ComboBoxAssist.ClassicMode="true" Loaded="EmpNameEdit_Loaded" DropDownClosed="EmpNameEditCombo_DropDownClosed" IsEditable="True">
                   
                 </ComboBox>
                 <TextBox x:Name="EmpAddressEdit" Height="30" Width="200" materialDesign:HintAssist.Hint="Address"/>

@@ -75,12 +75,13 @@ namespace Claimy_Dashboard.View
 
         private void RemoveBtn_Click(object sender, RoutedEventArgs e)
         {
-            ViewModel.EditCustomerViewModel.RemoveEmployee(CustomerToremove.Text);
+           ViewModel.EditCustomerViewModel.RemoveEmployee(CustomerToremove.Text);          
+           
         }
 
         private void CancelBtn_Click(object sender, RoutedEventArgs e)
         {
-            // hides RemoveEmployeeGrid and makes choices visible again
+            // hides RemoveCustomerGrid and makes choices visible again
             RemoveCustomerGrid.Visibility = Visibility.Hidden;
             ChoiceCustomer.Visibility = Visibility.Visible;
         }
@@ -113,6 +114,8 @@ namespace Claimy_Dashboard.View
                 CusCountryEdit.Text = cl.fld_Country;
                 CusCityEdit.Text = cl.fld_City;
             }
+
+
 
         }
     }

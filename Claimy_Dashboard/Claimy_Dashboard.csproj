@@ -77,13 +77,14 @@
     <Compile Include="EF\tbl_Image.cs" />
     <Compile Include="EF\tbl_Parking_Company.cs" />
     <Compile Include="EF\tbl_Ticket_Case.cs" />
+    <Compile Include="ViewModel\EditCaseViewModel.cs" />
     <Compile Include="ViewModel\EditCustomerViewModel.cs" />
     <Compile Include="ViewModel\EditEmployeeViewModel.cs" />
     <Compile Include="ViewModel\ImageFromDB.cs" />
     <Compile Include="ViewModel\ListsForListviews.cs" />
     <Compile Include="ViewModel\LoginViewModel.cs" />
-    <Compile Include="View\AddCase.xaml.cs">
-      <DependentUpon>AddCase.xaml</DependentUpon>
+    <Compile Include="View\EditTicketCase.xaml.cs">
+      <DependentUpon>EditTicketCase.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\EditCustomerView.xaml.cs">
       <DependentUpon>EditCustomerView.xaml</DependentUpon>
@@ -97,7 +98,7 @@
     <Compile Include="View\Login.xaml.cs">
       <DependentUpon>Login.xaml</DependentUpon>
     </Compile>
-    <Page Include="View\AddCase.xaml">
+    <Page Include="View\EditTicketCase.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

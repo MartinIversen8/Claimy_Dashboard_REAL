@@ -37,10 +37,10 @@
 
         </Grid>
         <Grid Width="200" HorizontalAlignment="Left" Background="White">
-            <!--<Image VerticalAlignment="Top" Source="Resource/Claimy_Logo_OG.png" Height="77"/>-->
+            
             <StackPanel>
                 <Grid Height="68" Background="White">
-                    <!--<Image Source="Resource/Claimy_Logo_OG.png" Margin="0,0,0,-9"/>-->
+                 
                     <Button VerticalAlignment="Top" HorizontalAlignment="Right" Width="200" Height="68" Background="{x:Null}" BorderBrush="{x:Null}">
                         <StackPanel>
                             <Image Source="/Resource/Claimy_Logo_OG.png" Stretch="Fill" Height="61" Width="182"/>
@@ -61,10 +61,10 @@
                             <TextBlock Text="Cases" VerticalAlignment="Center" Margin="20 10"/>
                         </StackPanel>
                     </ListViewItem>
-                    <ListViewItem Height="60" PreviewMouseLeftButtonDown="OpenAddCase">
+                    <ListViewItem Height="60" PreviewMouseLeftButtonDown="OpenEditCase">
                         <StackPanel Orientation="Horizontal">
-                            <materialDesign:PackIcon Kind="Add" Width="25" Height="25" VerticalAlignment="Center"/>
-                            <TextBlock Text="Add Case" VerticalAlignment="Center" Margin="20 10"/>
+                            <materialDesign:PackIcon Kind="FileDocumentEdit" Width="25" Height="25" VerticalAlignment="Center"/>
+                            <TextBlock Text="Edit Case" VerticalAlignment="Center" Margin="20 10"/>
                         </StackPanel>
                     </ListViewItem>
                     <ListViewItem Height="60" PreviewMouseLeftButtonDown="EditEmployeesBtn">

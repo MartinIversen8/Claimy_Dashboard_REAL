@@ -17,7 +17,6 @@ namespace Claimy_Dashboard.EF
         }
 
         [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int fld_Number { get; set; }
 
         [StringLength(50)]

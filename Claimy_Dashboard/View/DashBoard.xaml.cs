@@ -60,7 +60,7 @@ namespace Claimy_Dashboard.View
 
         }
 
-        private void OpenAddCase(object sender, MouseButtonEventArgs e)
+        private void OpenEditCase(object sender, MouseButtonEventArgs e)
         {
             AddCase popUp = new AddCase();
             popUp.Show();

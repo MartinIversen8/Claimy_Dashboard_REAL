@@ -1,0 +1,74 @@
+﻿<Window x:Class="Claimy_Dashboard.View.AddCase"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Claimy_Dashboard.View"
+         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        mc:Ignorable="d"
+        Title="AddCase" Height="550" Width="800" ResizeMode="NoResize">
+    <Grid Background="White">
+        <Grid Height="70" VerticalAlignment="Top" Background="#FF537DA6">
+            <TextBlock Text="Edit Ticket Case(s)" Foreground="White" FontSize="50" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        </Grid>
+        <Grid x:Name="TicketCaseEditGrid" VerticalAlignment="Center" HorizontalAlignment="Center" Width="800" Height="375" Visibility="Hidden">
+            <StackPanel VerticalAlignment="Top" HorizontalAlignment="Center" Height="400" Width="780">
+                <ComboBox x:Name="CaseNumberEditCombo" Height="30" Width="150" materialDesign:HintAssist.Hint="Case No" materialDesign:ComboBoxAssist.ClassicMode="true" Loaded="CaseNumberEdit_Loaded" DropDownClosed="CaseNumberEdit_DropDownClosed" HorizontalAlignment="Center"  >
+
+                </ComboBox>                
+                <TextBox x:Name="ParkingFineReasonEdit" Width="150" materialDesign:HintAssist.Hint="Parking Fine Reason" HorizontalAlignment="Center" />
+                <TextBox x:Name="PrecedensEdit" Width="150" materialDesign:HintAssist.Hint="Precedens" HorizontalAlignment="Center" />
+                <ComboBox x:Name="StatusComboEdit" Width="150" materialDesign:HintAssist.Hint=" Status" HorizontalAlignment="Center" materialDesign:ComboBoxAssist.ClassicMode="true" >
+                    <ComboBoxItem Width="150" BorderThickness="0">On going</ComboBoxItem>
+                    <ComboBoxItem Width="150" BorderThickness="0">Pending</ComboBoxItem>
+                    <ComboBoxItem Width="150" BorderThickness="0">Done</ComboBoxItem>
+                    <ComboBoxItem Width="150" BorderThickness="0">Not specified</ComboBoxItem>
+                </ComboBox>
+                <TextBox x:Name="LawViolationEdit" Width="150" materialDesign:HintAssist.Hint="Law violation" HorizontalAlignment="Center" />
+                <TextBox x:Name="TaxNumberEdit" Width="150" materialDesign:HintAssist.Hint="Tax Number" HorizontalAlignment="Center" />
+                <TextBox x:Name="DateTimeEdit" Width="150" materialDesign:HintAssist.Hint="Date Time" HorizontalAlignment="Center" />
+                <TextBox x:Name="CarRegEdit" Width="150" materialDesign:HintAssist.Hint="Car Reg No" HorizontalAlignment="Center" />
+                <TextBox x:Name="ParkingSpaceIDEdit" Width="150" materialDesign:HintAssist.Hint="Parking space ID" HorizontalAlignment="Center" />
+                <TextBox x:Name="TrafficWardenID" Width="150" materialDesign:HintAssist.Hint="Traffic Warden ID" HorizontalAlignment="Center" />
+                <TextBox x:Name="AmountEdit" Width="150" materialDesign:HintAssist.Hint="Amount" HorizontalAlignment="Center" />
+                <TextBox x:Name="PaymentInfoEdit" Width="150" materialDesign:HintAssist.Hint="Payment Info" HorizontalAlignment="Center" />
+                <TextBox x:Name="CarBrandEdit" Width="150" materialDesign:HintAssist.Hint="Car brand" HorizontalAlignment="Center" />
+                <TextBox x:Name="CvrnrEdit" Width="150" materialDesign:HintAssist.Hint="CVR-NR" HorizontalAlignment="Center" />
+            </StackPanel>
+        </Grid>
+        <Grid x:Name="BottomGrid" VerticalAlignment="Bottom" HorizontalAlignment="Center" Width="200" Height="55" Visibility="Hidden">
+            <Button Height="30" Width="80" Background="#FF537DA6" VerticalAlignment="Center" HorizontalAlignment="Left" Content="Edit" Click="SaveChangesToDB"/>
+            <Button Height="30" Width="80" VerticalAlignment="Center" HorizontalAlignment="Right" Background="#FF537DA6" Content="Cancel" Click="CancelEditBtn"  />
+
+        </Grid>
+        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Height="175" Width="200 " x:Name="ChoiceCase" >
+            <ListView Foreground="#FF537DA6">
+
+                <ListViewItem Height="60" PreviewMouseLeftButtonUp="EditCaseTicketOptions">
+                    <StackPanel Orientation="Horizontal">
+                        <materialDesign:PackIcon Kind="FileDocumentEdit" Width="25" Height="25" VerticalAlignment="Center"/>
+                        <TextBlock Text="Edit Ticket Case" VerticalAlignment="Center" Margin="20 10"/>
+                    </StackPanel>
+                </ListViewItem>
+                <ListViewItem Height="60" PreviewMouseLeftButtonUp="RemoveCaseTicketOption">
+                    <StackPanel Orientation="Horizontal">
+                        <materialDesign:PackIcon Kind="FileRemove" Width="25" Height="25" VerticalAlignment="Center"/>
+                        <TextBlock Text="Rmove Ticket Case" VerticalAlignment="Center" Margin="20 10"/>
+                    </StackPanel>
+                </ListViewItem>
+
+            </ListView>
+        </StackPanel>
+        
+         <Grid Width="200" Height="350" HorizontalAlignment="Center" x:Name="RemoveCaseGrid" Visibility="Hidden">
+            <StackPanel Width="200" Height="250" HorizontalAlignment="Center" >
+                <ComboBox x:Name="CaseToRemoveCombobox" Height="30" Width="200" materialDesign:HintAssist.Hint="Case No" materialDesign:ComboBoxAssist.ClassicMode="true" Loaded="CaseToRemoveCombobox_Loaded">
+
+                </ComboBox>
+            </StackPanel>
+            <Button x:Name="RemoveBtn" Content="Remove" HorizontalAlignment="Left" VerticalAlignment="Center" Background="#FF537DA6" BorderBrush="#FF537DA6" Click="RemoveBtn_Click"/>
+            <Button x:Name="CancelBtn" Content="Cancel" HorizontalAlignment="Right" VerticalAlignment="Center" Background="#FF537DA6" BorderBrush="#FF537DA6" Click="CancelBtn_Click"/>
+        </Grid>
+
+    </Grid>
+</Window>

@@ -8,7 +8,7 @@ namespace Claimy_Dashboard.EF
     public partial class ClaimyEntities : DbContext
     {
         public ClaimyEntities()
-            : base("name=ClaimyEntities5")
+            : base("name=ClaimyEntities6")
         {
         }
 
@@ -91,8 +91,12 @@ namespace Claimy_Dashboard.EF
             modelBuilder.Entity<tbl_Customer>()
                 .HasMany(e => e.tbl_Ticket_Case)
                 .WithOptional(e => e.tbl_Customer)
-                .HasForeignKey(e => e.fld_Customer_Email)
-                .WillCascadeOnDelete();
+                .HasForeignKey(e => e.fld_Customer_Email);
+
+            modelBuilder.Entity<tbl_Customer>()
+                .HasMany(e => e.tbl_Ticket_Case1)
+                .WithOptional(e => e.tbl_Customer1)
+                .HasForeignKey(e => e.fld_Customer_Email);
 
             modelBuilder.Entity<tbl_Image>()
                 .Property(e => e.fld_Ticket_ID)
@@ -149,6 +153,10 @@ namespace Claimy_Dashboard.EF
 
             modelBuilder.Entity<tbl_Ticket_Case>()
                 .Property(e => e.fld_tax_number)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<tbl_Ticket_Case>()
+                .Property(e => e.fld_date_time)
                 .IsUnicode(false);
 
             modelBuilder.Entity<tbl_Ticket_Case>()

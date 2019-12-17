@@ -12,6 +12,7 @@ namespace Claimy_Dashboard.EF
         public tbl_Customer()
         {
             tbl_Ticket_Case = new HashSet<tbl_Ticket_Case>();
+            tbl_Ticket_Case1 = new HashSet<tbl_Ticket_Case>();
         }
 
         [Key]
@@ -36,5 +37,8 @@ namespace Claimy_Dashboard.EF
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<tbl_Ticket_Case> tbl_Ticket_Case { get; set; }
+
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<tbl_Ticket_Case> tbl_Ticket_Case1 { get; set; }
     }
 }
