@@ -57,7 +57,7 @@ namespace Claimy_Dashboard.View
             // hide the list view 
             caseListView.Visibility = Visibility.Hidden;
             homePage.Visibility = Visibility.Visible;
-           
+            
         }
 
         private void CalledHelp(object sender, RoutedEventArgs e)
@@ -68,6 +68,7 @@ namespace Claimy_Dashboard.View
 
         private void OpenEditCase(object sender, MouseButtonEventArgs e)
         {
+            // opens the edit case
             AddCase popUp = new AddCase();
             popUp.Show();
             
@@ -107,12 +108,14 @@ namespace Claimy_Dashboard.View
 
         private void EditEmployeesBtn(object sender, MouseButtonEventArgs e)
         {
+            // open the edit employee view
             EditEmployees editEmployees = new EditEmployees();
             editEmployees.Show();
         }
 
         private void EditCustomerBtn(object sender, MouseButtonEventArgs e)
         {
+            // opens the edit customer view
             EditCustomerView editCustomer = new EditCustomerView();
             editCustomer.Show();
         }

@@ -49,8 +49,10 @@ namespace Claimy_Dashboard.ViewModel
             }
         }
 
+        // makes the image into byte[] 
         public static byte[] GetPhotoToBinary(string filePath)
         {
+            
             FileStream stream = new FileStream(
                 filePath, FileMode.Open, FileAccess.Read);
             BinaryReader reader = new BinaryReader(stream);
@@ -63,6 +65,7 @@ namespace Claimy_Dashboard.ViewModel
             return photo;
         }
 
+        // converting the byte[]/binary from the database back to a image
         public static BitmapImage ConvertToImage(byte[] binary)
         {
             byte[] buffer = binary;
