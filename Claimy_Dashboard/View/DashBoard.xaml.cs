@@ -29,9 +29,9 @@ namespace Claimy_Dashboard.View
             InitializeComponent();
             // loading data from database int a list so it can be shown in the listview. 
             caseListView.Visibility = Visibility.Hidden;
-            CasesTickets = new List<tbl_Ticket_Case>();
-            CasesTickets = ViewModel.ListsForListviews.CaseLsitMaker();            
-            DataContext = this;
+            //CasesTickets = new List<tbl_Ticket_Case>();
+            //CasesTickets = ViewModel.ListsForListviews.CaseLsitMaker();            
+            //DataContext = this;
             
         }
 
@@ -45,13 +45,20 @@ namespace Claimy_Dashboard.View
             // show caselistview that has data about caseses
             caseListView.Visibility = Visibility.Visible;
             homePage.Visibility = Visibility.Hidden;
-           
+            // This is for "updating" the listview when a change happens
+            caseListView.ItemsSource = null;
+            caseListView.Items.Clear();
+            caseListView.ItemsSource = CasesTickets;
+            CasesTickets = ViewModel.ListsForListviews.CaseLsitMaker();
+            DataContext = this;
+
         }
         private void ShowHomePage(object sender, MouseButtonEventArgs e)
         {
             // hide the list view 
             caseListView.Visibility = Visibility.Hidden;
             homePage.Visibility = Visibility.Visible;
+           
         }
 
         private void CalledHelp(object sender, RoutedEventArgs e)
