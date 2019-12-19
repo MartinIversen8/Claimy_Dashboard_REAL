@@ -75,11 +75,10 @@ namespace Claimy_Dashboard.View
         }
 
         private void ShowSelectedCase(object sender, MouseButtonEventArgs e)
-        {
-            tbl_Image image = new tbl_Image();
+        {            
             List<byte[]> images = new List<byte[]>();
             Full_Case_Ticket_View fctw = new Full_Case_Ticket_View();
-            // shows the window where all info about a case is stored. 
+            // shows the window where all info about a case is shown.  
             fctw.Show();
             var selectedItem = caseListView.SelectedItem as tbl_Ticket_Case;
             // getting the id of the selected case. 
